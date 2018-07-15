@@ -1,0 +1,17 @@
+.online {
+    background: #42b72a;
+    display: inline-block;
+    margin-left: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .offline {
+    background: #90949c;
+    display: inline-block;
+    margin-left: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }

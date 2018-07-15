@@ -1,0 +1,27 @@
+<ion-content no-padding>
+    <ion-item-divider color="light">Notifications</ion-item-divider>
+
+    <ion-item *ngFor="let user of notifLists; let i = index">
+        <ion-avatar item-start>
+          <img src="{{user.photo}}" *ngIf="user.photo;else photo;">
+          <ng-template #photo><span class="icon-circle">{{user.displayName.charAt(0)}}</span></ng-template>
+          <span [class]="user.status"></span>
+        </ion-avatar>
+        <ion-label>
+          <h3>{{user.displayName}}</h3>
+          <p *ngIf="user.notifDesc == 'requested'">sent you a friend request</p>
+          <p *ngIf="user.notifDesc == 'accepted'">accepted your friend request</p>
+        </ion-label>
+        <button ion-button item-end color="light-blue" (click)="acceptRequest(user, i)" no-margin *ngIf="user.notifDesc == 'requested'">
+          Accept
+        </button>
+        <ion-note item-end *ngIf="user.notifDesc == 'accepted'">{{user.dateAdded | date:'shortTime'}}</ion-note>
+    </ion-item>
+    <ion-item *ngIf="notifCount == 0">
+        <ion-label>
+          <p>No notification yet</p>
+        </ion-label>
+      </ion-item>
+</ion-content>
+
+

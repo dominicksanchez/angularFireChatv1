@@ -1,0 +1,102 @@
+page-chat {
+    .note {
+        align-self: flex-start;
+        font-size: 12px;
+    }
+
+    .icon-circle, .icon-circle-large, .icon-circle-small {
+        position: relative;
+        display: inline-block;
+        margin: -1px;
+        width: 45px;
+        height: 45px; 
+        -moz-border-radius:50%;
+        -webkit-border-radius:50%;
+        border-radius: 50%;
+        border: 1px solid #ebebeb;
+        background: #1e88e5; /*#ececec;ebebeb*/
+        color: #fff;
+        text-align:center;
+        line-height: 42px;
+        font-size: 22px;
+    }
+
+    .input-wrapper ion-label {
+        margin: 13px 8px 13px 0 !important;
+    }
+
+    ion-avatar {
+        margin: 5px 16px 5px 0 !important;
+    }
+
+    .icon-circle {
+        text-transform: uppercase;
+    }
+
+    .item-md ion-avatar {
+        position: relative;
+    }
+
+    .item-ios [item-right], .item-ios [item-end] {
+        margin: 0;
+      }
+  
+      .item-ios.item-block .item-inner {
+        padding-right: 0;
+        border: none;
+      }
+  
+      .item {
+        border-bottom: 0.55px solid #c8c7cc;
+        position: relative !important;
+      }
+  
+      .item-md.item-block .item-inner {
+        border-bottom: none;
+      }
+  
+      .item-ios [item-right], 
+      .item-ios [item-end],
+      .note-md {
+        margin: 0 !important;
+        font-size: 12px;
+        position: relative;
+        top: 8px;
+        right: 10px;
+    }
+
+    .item-inner p {
+       font-size: 12px !important;
+       overflow: hidden;
+       text-overflow: ellipsis;
+       width: calc(100% - 20px);
+    }
+
+    .unreadCount {
+        position: absolute !important;
+        color: #fff;
+        background-color: #f53d3d;
+        padding: 1px 6px;
+        border-radius: 50%;
+        font-size: 11px;
+        top: 26px !important;
+        border-radius: 10px;
+    }
+
+    .fwB {
+        font-weight: bold;
+    }
+
+    .txtBlack {
+        color: #000;
+    }
+
+    .timeStamp {
+        position: absolute;
+        right: 10px !important;
+    }
+
+    .top30 {
+        top: 30px !important;
+    }
+}

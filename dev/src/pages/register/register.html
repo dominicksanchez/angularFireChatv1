@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar color="light-blue">
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding margin-top>
+  <form (submit)="register()" [formGroup]="registerForm">
+		<ion-item no-padding>
+			<ion-label floating>Name</ion-label>
+			<ion-input 
+				type="text" 
+				[(ngModel)]="name" 
+				name="name"
+				[formControl]="registerForm.controls['name']"
+			></ion-input>
+		</ion-item>
+  	<ion-item no-padding>
+  	  <ion-label floating>Email</ion-label>
+			<ion-input 
+				type="text" 
+				[(ngModel)]="email" 
+				name="email"
+				[formControl]="registerForm.controls['email']"
+			></ion-input>
+		</ion-item>
+		<div 
+			*ngIf="registerForm.controls['email'].hasError('pattern') && 
+			registerForm.controls['email'].touched" 
+			class="errorColor fSize12 mt5" 
+			padding-left>Email Address is invalid
+		</div>
+  	<ion-item no-padding>
+  	  <ion-label floating>Password</ion-label>
+			<ion-input
+				type="password" 
+				[(ngModel)]="pass" 
+				name="pass"
+				[formControl]="registerForm.controls['pass']"
+			></ion-input>
+		</ion-item>
+		<div 
+			*ngIf="registerForm.controls['pass'].hasError('required') && 
+			registerForm.controls['pass'].touched" 
+			class="errorColor fSize12 mt5" 
+			padding-left>Password is required
+		</div>
+		<div *ngIf="registerForm.controls['pass'].hasError('minlength') && 
+			registerForm.controls['pass'].touched" 
+			class="errorColor fSize12 mt5" 
+			padding-left>Your password must be at least 5 characters long.
+		</div>
+		<button ion-button color="default" medium float-right full margin-top [disabled]="isRegisterDisable">REGISTER</button>
+		
+	</form>
+</ion-content>

@@ -1,0 +1,60 @@
+<ion-content padding>
+  <div text-center margin-top>
+      <h1><img src="./assets/images/logo.svg" class="appLogo" alt="FireChat" no-margin></h1>
+      <p class="title" no-padding>Angular FireChat v1</p>
+  </div>
+  <ion-grid>
+      <ion-row>
+        <form (submit)="login()" [formGroup]="loginForm" col-12 no-padding>
+          <ion-item no-padding>
+            <ion-label floating>Email</ion-label>
+          <ion-input 
+          type="text" 
+          [(ngModel)]="email"
+          name="email"
+          [formControl]="loginForm.controls['email']"
+          (keyup)="hasInput()"
+          ></ion-input>
+        </ion-item>
+          <div 
+            *ngIf="loginForm.controls['email'].hasError('pattern') && 
+            loginForm.controls['email'].touched"
+            class="errorColor fSize12 mt5" 
+            >Email Address is invalid
+          </div>
+          <ion-item no-padding>
+              <ion-label floating>Password</ion-label>
+          <ion-input 
+          type="password"
+          [(ngModel)]="pass"
+          name="pass"
+          [formControl]="loginForm.controls['pass']"
+          (keyup)="hasInput()"
+          ></ion-input>
+        </ion-item>
+          <div 
+            *ngIf="loginForm.controls['pass'].hasError('required') && 
+            loginForm.controls['pass'].touched" 
+            class="errorColor fSize12 mt5" 
+            >Password is required
+          </div>
+    
+          <div text-right margin-top>
+            <span (click)="navPush('RegisterPage')" padding-top padding-right>Sign up?</span>
+            <span (click)="navPush('ResetPasswordPage')" padding-top>Forgot Password?</span>
+          </div>
+          <button ion-button color="light-blue" medium float-right full margin-top [disabled]="isLoginDisable">LOGIN</button>
+        </form>
+
+        <button ion-button icon-left medium full margin-top class="fbBtn mt200" (click)="fbLoginBtn()">
+          <ion-icon name="logo-facebook"></ion-icon>
+          LOGIN WITH FACEBOOK
+        </button>
+
+        <button ion-button icon-left medium full margin-top class="googleBtn" (click)="googleLoginBtn()">
+          <ion-icon name="logo-googleplus"></ion-icon>
+          LOGIN WITH GOOGLE
+        </button>
+      </ion-row>
+    </ion-grid>
+</ion-content>

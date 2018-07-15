@@ -1,0 +1,40 @@
+.ios, .md {
+    page-landing {
+        ion-content {
+            // background: url('/assets/images/bg.jpg');
+            // background-size: cover;
+            
+            .appLogo {
+                margin-top: 20px;
+                width: 80px;
+            }
+
+            .welcomeMsg {
+                font-size: 26px;
+                margin-bottom: 80px;
+            }
+
+            .fbBtn {
+                background: #3b5998;
+            }
+
+            .googleBtn {
+                background: #dd4b39;
+            }
+            
+            .item-inner {
+                background: #f5f6f7;
+            }
+
+            .item-block, .item-inner {
+                background: transparent !important;
+            }
+
+            .title {
+                font-size: 24px;
+                margin: 0;
+                font-weight: 500;
+            }
+        } 
+    }
+}

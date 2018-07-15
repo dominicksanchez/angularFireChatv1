@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar color="light-blue">
+        <ion-title>{{receiverName}} <p>{{receiverStatus}}</p></ion-title>
+      </ion-navbar>
+ </ion-header>
+ <ion-content>
+  <!-- <ion-infinite-scroll position="top" (ionInfinite)="doInfinite('top')">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
+
+   <div class="directChatArea" #content>
+      <div class="directChatMsg" *ngFor="let chat of chats">
+          <div class="directChatInfo">
+            <span class="directChatTimestamp">{{chat.timestamp | date:'shortTime'}} {{userLoggedId}}</span>
+          </div>
+          <img class="directChatImg" src="{{chat.senderPhoto}}" *ngIf="chat.senderPhoto != '' && chat.senderPhoto != 'none';else photo;" [hidden]="chat.name != receiverName">
+          <ng-template #photo><span class="iconCircle"  [hidden]="chat.name != receiverName">{{chat.name.charAt(0)}}</span></ng-template>
+          
+          <div class="talk-bubble tri-right tri-right left-top" [attr.float-right]="chat.name != receiverName ? true : null" *ngIf="chat.name != receiverName">
+            <div class="talktext">
+              <p>{{chat.message}}</p>
+            </div>
+          </div>
+          <div class="talk-bubble tri-right tri-right left-top otherChat" [attr.float-right]="chat.name != receiverName ? true : null" *ngIf="chat.name == receiverName">
+              <div class="talktext">
+                <p>{{chat.message}}</p>
+              </div>
+            </div>
+      </div>
+   </div>
+ </ion-content>
+ <ion-footer position="bottom">
+    <ion-item>
+        <ion-icon item-left name="attach" color="light-blue"></ion-icon>
+        <ion-input type="text" [(ngModel)]="chatMsg" name="chatMsg" (keyup.enter)="sendMessage()" placeholder="Enter your message . . ."></ion-input>
+        <ion-icon item-right name="send" color="light-blue" (click)="sendMessage()"></ion-icon>
+    </ion-item>
+ </ion-footer>

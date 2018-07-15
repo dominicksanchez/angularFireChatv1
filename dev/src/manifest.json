@@ -1,0 +1,14 @@
+{
+  "name": "FireChat",
+  "short_name": "FireChat",
+  "start_url": "index.html",
+  "display": "standalone",
+  "gcm_sender_id": "1063432282060", // user for push notification
+  "icons": [{
+    "src": "assets/imgs/logo.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "background_color": "#4e8ef7",
+  "theme_color": "#4e8ef7"
+}

@@ -1,0 +1,30 @@
+<ion-content no-padding>
+  <ion-searchbar [(ngModel)]="searchStr" [formControl]="searchControl" (ionInput)="onSearchInput()"></ion-searchbar>
+  <div *ngIf="searching" class="spinner-container">
+    <ion-spinner item-start="" name="bubbles" class="spinner spinner-ios spinner-bubbles spinner-ios-bubbles"></ion-spinner>
+  </div>
+  <ion-list *ngIf="!searching" class="usersList">
+    <div *ngIf="users && users.length">
+      <ion-item *ngFor="let user of users; let i = index">
+        <ion-avatar item-start>
+          <span class="unreadCount" *ngIf="user.unread">{{user.unread}}</span>
+          <img src="{{user.photo}}" *ngIf="user.photo;else photo;">
+          <ng-template #photo><span class="icon-circle">{{user.displayName && user.displayName.charAt(0)}}</span></ng-template>
+          <span [class]="user.status"></span>
+        </ion-avatar>
+        <ion-label>
+          <h3>{{user.displayName}}</h3>
+          <p>{{user.email}}</p>
+        </ion-label>
+        <button ion-button item-end icon-left icon-only small color="light-blue" (click)="sendFriendRequest(user, i)">
+          <ion-icon name="person-add"></ion-icon>
+        </button>
+      </ion-item>
+    </div>
+    <ion-item *ngIf="users && users.length === 0">
+      <ion-label>
+        <p class="noFriends">No friends yet</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

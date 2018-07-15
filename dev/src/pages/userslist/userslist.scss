@@ -1,0 +1,79 @@
+page-userslist {
+    .note {
+        align-self: flex-start;
+        font-size: 12px;
+    }
+
+    .icon-circle, .icon-circle-large, .icon-circle-small {
+        position: relative;
+        display: inline-block;
+        margin: -1px;
+        width: 45px;
+        height: 45px; 
+         -moz-border-radius:50%;
+        -webkit-border-radius:50%;
+          border-radius: 50%;
+        border: 1px solid #ebebeb;
+        background: #1e88e5; /*#ececec;ebebeb*/
+        color: #fff;
+        text-align:center;
+        line-height: 42px;
+        font-size: 22px;
+    }
+
+    ion-avatar img {
+        width: 45px !important;
+        height: 45px !important; 
+    }
+
+    .input-wrapper ion-label {
+        margin: 8px 8px 8px 0 !important;
+    }
+
+    .icon-circle {
+        text-transform: uppercase;
+    }
+
+    .item-md ion-avatar {
+        position: relative;
+    }
+
+    .item-md ion-avatar .unreadCount {
+        position: absolute;
+        right: -3px;
+        top: 0;
+        background: #da2929;
+        border-radius: 3px;
+        color: #fff;
+        font-size: 11px;
+        padding: 2px;
+        z-index: 1;
+    }
+
+    .spinner-container {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .item-md.item-block .item-inner,
+    .list-ios .item-block .item-inner {
+        border-bottom: none;
+    }
+
+    .item {
+        border-bottom: 0.55px solid #c8c7cc;
+    }
+
+    .noFriends {
+        font-size: 12px;
+    }
+
+    .button-md {
+        background-color: transparent !important;
+    }
+
+    .usersList .button-md {
+        background-color: #1e88e5 !important;
+    }
+}

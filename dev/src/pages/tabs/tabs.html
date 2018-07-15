@@ -1,0 +1,6 @@
+<ion-tabs color="light-blue">
+  <ion-tab tabIcon="chatbubbles" [rootParams]="tabsParam" tabTitle="Chats" [root]="tab1" tabBadge="{{unreadMsgCount > 0 ? unreadMsgCount : null}}" tabBadgeStyle="danger"></ion-tab>
+  <ion-tab tabIcon="notifications" tabTitle="Notifications" [root]="tab2" [rootParams]="tabsParam" tabBadge="{{notifCount > 0 ? notifCount : null}}" tabBadgeStyle="danger"></ion-tab>
+  <ion-tab tabIcon="person-add" tabTitle="Users" [rootParams]="tabsParam" [root]="tab3"></ion-tab>
+  <ion-tab tabIcon="log-out" tabTitle="Log out" [rootParams]="tabsParam" [root]="tab4" (ionSelect)="logoutClick()"></ion-tab>
+</ion-tabs>

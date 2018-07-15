@@ -1,0 +1,23 @@
+<ion-content no-padding>
+    <ion-item-divider color="light">Friends on FireChat</ion-item-divider>     
+    <ion-item *ngFor="let user of users; let i = index" (click)="pushChatRoom(user)">
+        <ion-avatar item-start>
+          <img src="{{user.photo}}" *ngIf="user.photo;else photo;">
+          <ng-template #photo><span class="icon-circle">{{user.displayName.charAt(0)}}</span></ng-template>
+          <span [class]="user.status"></span>
+        </ion-avatar>
+        <ion-label>
+          <h3 [class.fwB]="user.unreadCount != 0">{{user.displayName}}</h3>
+          <p *ngIf="user.lastMsg == null">No previous chat . . .</p>
+          <p [class.txtBlack]="user.unreadCount != 0" *ngIf="user.lastMessage != ''">{{user.lastMsg}}</p>
+        </ion-label>
+        <ion-note item-end [class.top30]="user.status == 'offline'" class="unreadCount" *ngIf="user.unreadCount != 0">{{user.unreadCount}}</ion-note>
+        <ion-note item-end class="timeStamp">{{user.lastMsgTimeStamp | date:'shortTime'}}</ion-note> 
+    </ion-item>
+    <ion-item *ngIf="users && users.length === 0">
+      <ion-label>
+        <p>No friends yet</p>
+      </ion-label>
+    </ion-item>
+</ion-content>
+

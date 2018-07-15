@@ -1,0 +1,35 @@
+.online {
+    background: #42b72a;
+    display: inline-block;
+    margin-left: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -1px;
+    right: 3px;
+  }
+
+  .item-ios ion-avatar {
+    position: relative;
+  }
+
+  .offline {
+    background: #a9adb4;
+    display: inline-block;
+    margin-left: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -1px;
+    right: 3px;
+  }
+
+  .item-md.item-block .item-inner {
+    border-bottom: none;
+  }
+
+  ion-item-divider {
+    font-size: 13px !important;
+  }
